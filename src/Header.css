@@ -1,0 +1,27 @@
+.header {
+    background-image: url('https://nxboats.com.br/wp-content/uploads/2023/11/marcas-de-carro-de-luxo.jpg'); /* Substitua pelo link da imagem desejada */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* 100% da altura da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+  
+  .header-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para melhor legibilidade */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .header-title {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  
+  .header-description {
+    font-size: 1.2em;
+  }

@@ -1,0 +1,30 @@
+footer {
+    background-color: #333; /* Cor de fundo do footer */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.footer-content {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+footer ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 10px 0 0 0; /* Margem superior */
+    display: flex; /* Exibe os itens em linha */
+    justify-content: center; /* Centraliza os itens */
+}
+
+footer a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: white; /* Cor do texto */
+    padding: 5px 10px; /* Espaçamento interno dos links */
+    transition: color 0.3s; /* Transição suave para a cor do texto */
+}
+
+footer a:hover {
+    color: #ccc; /* Cor do texto ao passar o mouse */
+}

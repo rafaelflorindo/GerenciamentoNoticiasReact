@@ -1,0 +1,30 @@
+nav {
+    background-color: #333; /* Cor de fundo */
+    padding: 10px 0px 10px 0px; /* Espaçamento interno */
+}
+
+nav ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    display: flex; /* Exibe os itens em linha */
+}
+
+nav a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: white; /* Cor do texto */
+    padding: 15px 20px; /* Espaçamento interno dos links */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+nav a:hover {
+    background-color: #575757; /* Cor de fundo ao passar o mouse */
+}
+
+nav li {
+    display: flex;
+    list-style: none; /* Remove o estilo da lista para os itens */
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
