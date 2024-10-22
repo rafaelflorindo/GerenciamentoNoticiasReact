@@ -3,12 +3,11 @@ import React from 'react';
 import './ListNoticia.css'
 
 // Componente para um item de notícia
-const ItemNoticia = ({ titulo, descricao, imagem }) => {
+const ItemNoticia = ({ titulo, imagem }) => {
   return (
     <div className="news-item">
       {imagem && <img src={imagem} alt={titulo} className="news-image" />}
       <h2 className="news-title">{titulo}</h2>
-      <p className="news-description">{descricao}</p>
     </div>
   );
 };
@@ -21,7 +20,6 @@ const ListarNoticias = ({ news }) => {
         <ItemNoticia 
           key={index} 
           titulo={item.titulo} 
-          descricao={item.descricao} 
           imagem={item.imagem} 
         />
       ))}
@@ -30,3 +28,5 @@ const ListarNoticias = ({ news }) => {
 };
 
 export default ListarNoticias
+
+//<p className="news-description">{descricao}</p>

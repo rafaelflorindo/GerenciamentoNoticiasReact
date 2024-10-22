@@ -2,7 +2,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+//importando componente de tela
 import Menu from './Menu';
+import Footer from './Footer';
+
+//importando os componentes de rotas
 import Home from './Home';
 import QuemSomos from './QuemSomos';
 import Noticias from './Noticias';
@@ -18,6 +22,7 @@ function AppRoutes() {
                 <Route path="/Contato" element={<Contato />} />
                 <Route path="/" element={<Home />} />
             </Routes>
+            <Footer />
         </Router>
     );
 }

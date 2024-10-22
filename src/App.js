@@ -1,6 +1,6 @@
 // App.js
 import React from 'react';
-import AppRoutes from './Routes'; // Ajuste o caminho se necessário
+import AppRoutes from './Routes';
 
 function App() {
     return (
