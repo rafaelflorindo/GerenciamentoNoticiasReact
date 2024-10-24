@@ -1,16 +1,18 @@
 # Projeto - Noticia
 
-xxxxxxx
+O sistema de Gerencimento de Noticias é um sistema de atividade acadêmica realizada com os alunos do 4º Semestre de ADS da Faculdades SENAC Maringá no ano de 2024. Este projeto é uma versão em React (em construção) do projeto de Gerenciamento de Projetos em Mobile (em construção). Ambos os projetos irão consumir uma API em Node (a construir).
 
-## Dependências
+## Instalar as dependências
 
+### Rotas de Navegação
+``` 
 npm install react-router-dom
+``` 
+## Instalar o projeto
+- npm install
 
-### `npm instaler`
+## Rodar a aplicação
+- npm start
 
-xxxxxxx
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Aplicação rodando em:
+(https://gerenciamento-noticias-react.vercel.app/)
