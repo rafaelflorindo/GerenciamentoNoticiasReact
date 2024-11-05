@@ -8,6 +8,7 @@ footer {
 .footer-content {
     max-width: 1200px; /* Largura máxima do conteúdo */
     margin: 0 auto; /* Centraliza o conteúdo */
+    color: #333;
 }
 
 footer ul {
@@ -27,4 +28,7 @@ footer a {
 
 footer a:hover {
     color: #ccc; /* Cor do texto ao passar o mouse */
+}
+footer p{
+    color: #fff;
 }

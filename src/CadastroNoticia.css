@@ -1,0 +1,69 @@
+/* CadastroNoticia.css */
+
+
+/* CadastroNoticia.css */
+.formulario-noticia {
+    max-width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.formulario-noticia h1 {
+    text-align: center;
+}
+
+.formulario-noticia div {
+    margin-bottom: 15px;
+}
+
+.formulario-noticia label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formulario-noticia input,
+.formulario-noticia textarea {
+    width: 95%;
+    height: 30px;
+    font-size: 15px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.formulario-noticia textarea {
+    height: 190px;
+}
+.formulario-noticia button {
+    width: 20%;
+    height: 50px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario-noticia button:hover {
+    background-color: #0056b3;
+}
+
+.mensagem {
+    display: flex;
+    border: 1px solid green;
+    border-radius: 7px;
+    height: 60px;
+    background-color: green;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

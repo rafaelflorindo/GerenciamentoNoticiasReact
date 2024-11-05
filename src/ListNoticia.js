@@ -1,31 +1,26 @@
-// ListarNoticias.js
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './ListNoticia.css'
 
 // Componente para um item de notícia
-const ItemNoticia = ({ id, titulo, imagem }) => {
+const ItemNoticia = ({ titulo, descricao, imagem }) => {
   return (
     <div className="news-item">
       {imagem && <img src={imagem} alt={titulo} className="news-image" />}
       <h2 className="news-title">{titulo}</h2>
-      
-      <Link to={`/DetalheNoticia/${id}`}>
-        <button className='details-button'>Ver Detalhes</button>
-      </Link>
+      <p className="news-description">{descricao}</p>
     </div>
   );
 };
 
 // Componente para listar notícias
-const ListarNoticias = ({ news }) => {
+const ListNoticia = ({ news }) => {
   return (
     <div className="news-list">
       {news.map((item, index) => (
         <ItemNoticia 
           key={index} 
-          id={item.id}
           titulo={item.titulo} 
+          descricao={item.descricao} 
           imagem={item.imagem} 
         />
       ))}
@@ -33,4 +28,4 @@ const ListarNoticias = ({ news }) => {
   );
 };
 
-export default ListarNoticias
+export default ListNoticia;

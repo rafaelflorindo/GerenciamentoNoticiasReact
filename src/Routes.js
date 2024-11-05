@@ -11,6 +11,9 @@ import Home from './Home';
 import QuemSomos from './QuemSomos';
 import Noticias from './Noticias';
 import Contato from './Contato';
+import DetalheNoticia from './DetalheNoticia'
+import CadastroNoticia from './CadastroNoticia';
+import AdmListaNoticias from './AdmListaNoticias';
 
 function AppRoutes() {
     return (
@@ -19,6 +22,9 @@ function AppRoutes() {
             <Routes>
                 <Route path="/QuemSomos" element={<QuemSomos />} />
                 <Route path="/Noticias" element={<Noticias />} />
+                <Route path="/DetalheNoticia/:id" element={<DetalheNoticia />} />
+                <Route path="/CadastroNoticia" element={<CadastroNoticia />} />
+                <Route path="/AdmListaNoticias" element={<AdmListaNoticias />} />
                 <Route path="/Contato" element={<Contato />} />
                 <Route path="/" element={<Home />} />
             </Routes>

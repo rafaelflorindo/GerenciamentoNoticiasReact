@@ -10,15 +10,18 @@
 .QuemSomos h1{
     font-weight: 900;
     font-size: 2,8em;
+    color: #333;
 }
 
 .QuemSomos h2{
     font-weight: 700;
     font-size: 2.1em;
+    color: #333;
 }
 
 .QuemSomos p{
     font-size: 1,9em;
     line-height: 30px;
     text-align: justify;
+    color: #333;
 }
