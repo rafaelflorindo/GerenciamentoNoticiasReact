@@ -13,7 +13,7 @@ const EditarNoticia = ({ noticiaId, aoSalvar }) => {
         // Carrega os dados da notícia ao montar o componente
         const carregarNoticia = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/noticias/${noticiaId}`);
+                const response = await fetch(`http://localhost:8082/noticias/${noticiaId}`);
                 if (!response.ok) {
                     throw new Error('Erro ao carregar notícia');
                 }
@@ -38,7 +38,7 @@ const EditarNoticia = ({ noticiaId, aoSalvar }) => {
         const noticia = { titulo, descricao, link, imagem };
 
         try {
-            const response = await fetch(`http://localhost:8080/noticias/${noticiaId}`, {
+            const response = await fetch(`http://localhost:8082/noticias/${noticiaId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
