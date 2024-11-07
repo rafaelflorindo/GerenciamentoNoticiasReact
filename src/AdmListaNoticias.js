@@ -14,7 +14,7 @@ const AdmListaNoticias = () => {
 
     const fetchNoticias = async () => {
         try {
-            const response = await fetch('http://localhost:8082/noticias');
+            const response = await fetch('https://server-noticias.vercel.app:3000/noticias');
             if (!response.ok) {
                 throw new Error('Erro ao buscar notícias');
             }
@@ -28,7 +28,7 @@ const AdmListaNoticias = () => {
     const excluirNoticia = async (id) => {
         if (window.confirm('Tem certeza que deseja excluir esta notícia?')) {
             try {
-                const response = await fetch(`http://localhost:8080/noticias/${id}`, {
+                const response = await fetch(`https://server-noticias.vercel.app:3000/noticias/${id}`, {
                     method: 'DELETE',
                 });
                 if (!response.ok) {
