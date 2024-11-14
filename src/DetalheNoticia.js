@@ -1,6 +1,7 @@
 //DetalheNoticia.js
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import './DetalheNoticia.css';
 
 const DetalheNoticia = () => {
     const { id } = useParams();
@@ -36,13 +37,13 @@ const DetalheNoticia = () => {
     }
 
     return (
-        <div>
-            <h1>Detalhes da Notícia {id}</h1>
+        <div className="noticia-container">
+            <h1>Tecnologia & Programação</h1>
             {noticia ? (
-                <div>
+                <div className="noticia-detail">
                     {noticia.imagem && <img src={noticia.imagem} alt={noticia.titulo} className="news-image" />}
-                    <h2>{noticia.titulo}</h2>
-                    <p>{noticia.descricao}</p>
+                    <h2 className="noticia-title">{noticia.titulo}</h2>
+                    <p className="noticia-description">{noticia.descricao}</p>
                 </div>
             ) : (
                 <p>Notícia não encontrada.</p>
@@ -52,3 +53,6 @@ const DetalheNoticia = () => {
 };
 
 export default DetalheNoticia;
+
+
+

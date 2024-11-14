@@ -1,4 +1,3 @@
-// ListaNoticias.js
 import React, { useEffect, useState } from 'react';
 import './ListaNoticias.css';
 import EditarNoticia from './EditarNoticia';
@@ -14,7 +13,7 @@ const AdmListaNoticias = () => {
 
     const fetchNoticias = async () => {
         try {
-            const response = await fetch('https://server-noticias.vercel.app:3000/noticias');
+            const response = await fetch('http://localhost:8082/noticias');
             if (!response.ok) {
                 throw new Error('Erro ao buscar notícias');
             }
@@ -28,7 +27,7 @@ const AdmListaNoticias = () => {
     const excluirNoticia = async (id) => {
         if (window.confirm('Tem certeza que deseja excluir esta notícia?')) {
             try {
-                const response = await fetch(`https://server-noticias.vercel.app:3000/noticias/${id}`, {
+                const response = await fetch(`http://localhost:8080/noticias/${id}`, {
                     method: 'DELETE',
                 });
                 if (!response.ok) {
@@ -41,56 +40,73 @@ const AdmListaNoticias = () => {
             }
         }
     };
-    const limitarTexto = (texto, limite = 250) => {
-        if (texto.length > limite) {
-            return texto.slice(0, limite) + '...';
+
+    const ativarNoticia = async (id) => {
+        try {
+            const response = await fetch(`http://localhost:8082/noticias/ativar/${id}`, {
+                method: 'PUT',
+            });
+            if (!response.ok) {
+                throw new Error('Erro ao ativar a notícia');
+            }
+            setMensagem('Notícia ativada com sucesso!');
+            fetchNoticias(); // Atualizar a lista de notícias
+        } catch (error) {
+            setMensagem(`Erro: ${error.message}`);
         }
-        return texto;
     };
+
     return (
         <div>
-        
-        {mensagem && <p>{mensagem}</p>}
-        
-        {editandoNoticiaId ? (
-            <EditarNoticia 
-                noticiaId={editandoNoticiaId} 
-                aoSalvar={() => {
-                    setEditandoNoticiaId(null); // Fecha o modo de edição
-                    fetchNoticias(); // Atualiza a lista após salvar
-                }} 
-            />
-        ) : (
-            <div>
-                <h1>Painel Administrativo - Lista de Notícias</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Título</th>
-                        <th>Descrição</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {noticias.map((noticia) => (
-                        <tr key={noticia.id}>
-                            <td>{noticia.titulo}</td>
-                            <td>{noticia.descricao.substring(0, 250)}...</td>
-                            <td>
-                                <button onClick={() => setEditandoNoticiaId(noticia.id)}>
-                                    Editar
-                                </button>
-                                <button onClick={() => excluirNoticia(noticia.id)}>
-                                    Excluir
-                                </button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-            </div>
-        )}
-    </div>
+            {mensagem && <p>{mensagem}</p>}
+            
+            {editandoNoticiaId ? (
+                <EditarNoticia 
+                    noticiaId={editandoNoticiaId} 
+                    aoSalvar={() => {
+                        setEditandoNoticiaId(null); // Fecha o modo de edição
+                        fetchNoticias(); // Atualiza a lista após salvar
+                    }} 
+                />
+            ) : (
+                <div>
+                    
+                    <div className="noticias-lista">
+                        <h1>Painel Administrativo - Lista de Notícias</h1>
+                        {noticias.map((noticia) => (
+                            <div key={noticia.id} className="noticia-linha">
+                                <div className="noticia-campo imagem-container">
+                                    <img src={noticia.imagem} alt={noticia.titulo} className="imagem-pequena" />
+                                </div>
+                                <div className="noticia-campo">
+                                    <strong>Título:</strong>
+                                    <p>{noticia.titulo.substring(0, 50)}</p>
+                                </div>
+                                <div className="noticia-campo">
+                                    <strong>Descrição:</strong>
+                                    <p>{noticia.descricao.substring(0, 100)}...</p>
+                                </div>
+                                <div className="noticia-botoes">
+                                    <button onClick={() => setEditandoNoticiaId(noticia.id)} className="btn editar">
+                                        <i className="fas fa-edit"></i> Editar
+                                    </button>
+                                    <button onClick={() => excluirNoticia(noticia.id)} className="btn excluir">
+                                        <i className="fas fa-trash"></i> Excluir
+                                    </button>
+                                    <button onClick={() => ativarNoticia(noticia.id)} className="btn ativar">
+                                        <i className="fas fa-check-circle"></i> Ativar
+                                    </button>
+                                    <button className="btn visualizar">
+                                        <i className="fas fa-eye"></i> Visualizar
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+            )}
+        </div>
     );
 };
 

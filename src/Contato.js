@@ -9,7 +9,7 @@ const Contato = () => {
     const [mensagem, setMensagem] = useState('');
 
     const handleSubmit = (e) => {
-        e.preventDefault();//impede que a página seja recarregada ao enviar o formulário.
+        e.preventDefault();
 
         // Validação simples
         if (!nome || !email || !descricao) {
@@ -35,6 +35,7 @@ const Contato = () => {
     return (
         <div className="formulario-contato">
             <h2>Contato</h2>
+            <p>Preencha os campos abaixo para que possamos entrar em contato com você.</p>
             {mensagem && <p className="mensagem">{mensagem}</p>}
             <form onSubmit={handleSubmit}>
                 <div>

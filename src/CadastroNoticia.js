@@ -1,6 +1,6 @@
 // CadastroNoticia.js
 import React, { useState } from 'react';
-import './CadastroNoticia.css'; // Importando o arquivo de estilos
+import './CadastroNoticia.css';
 
 const CadastroNoticia = () => {
     const [titulo, setTitulo] = useState('');

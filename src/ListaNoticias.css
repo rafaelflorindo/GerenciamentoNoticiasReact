@@ -1,82 +1,126 @@
-/* Estilização geral */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+/* Estilo geral da lista de notícias */
+.noticias-lista {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Menos espaçamento entre as notícias */
 }
 
-h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Estilo da tabela */
-table {
-    width: 90%;
-    margin: 0 auto;
-    border-collapse: collapse;
+/* Cada linha de notícia será uma "linha" que se assemelha à de uma tabela */
+.noticia-linha {
+    display: flex;
+    justify-content: space-between; /* Alinha os itens nas extremidades */
+    padding: 10px; /* Menos padding para reduzir o espaço interno */
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    align-items: center; /* Alinha os itens verticalmente */
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    overflow: hidden;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte em telas menores */
 }
 
-/* Cabeçalho da tabela */
-table thead tr {
-    background-color: #4CAF50;
-    color: #fff;
-    text-align: left;
+/* Estilo para os campos de título e descrição */
+.noticia-campo {
+    flex: 1; /* Permite que esses campos ocupem a largura disponível */
+    min-width: 120px; /* Ajustado para tornar os campos mais compactos */
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px; /* Espaço reduzido entre os campos */
+}
+
+.noticia-campo strong {
     font-weight: bold;
+    color: #333;
+    font-size: 1rem;
 }
 
-table th, table td {
-    padding: 12px 15px;
+/* Estilo específico para a imagem */
+.imagem-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 100px; /* Limita o tamanho da imagem para não ocupar muito espaço */
 }
 
-/* Linhas da tabela */
-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+.imagem-pequena {
+    width: 80px;  /* Ajustado para a imagem ser menor */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 4px;  /* Arredonda as bordas da imagem */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);  /* Sombra suave para a imagem */
 }
 
-table tbody tr:nth-child(odd) {
-    background-color: #e8f5e9;
+.noticia-campo p {
+    color: #555;
+    margin-top: 5px;
+    font-size: 0.9rem; /* Tamanho da fonte menor para otimizar o espaço */
+    line-height: 1.3;
 }
 
-table tbody tr:hover {
-    background-color: #d0f0c0;
-    cursor: pointer;
+/* Estilo para os botões de ação */
+.noticia-botoes {
+    display: flex;
+    gap: 8px; /* Espaçamento reduzido entre os botões */
+    justify-content: flex-start;
+    flex-wrap: wrap; /* Permite que os botões quebrem em telas pequenas */
+    align-items: center;
 }
 
-/* Estilo dos botões de ação */
-button {
-    padding: 8px 12px;
-    margin: 0 5px;
+.btn {
+    padding: 6px 12px; /* Botões mais compactos */
     border: none;
-    border-radius: 4px;
-    font-size: 14px;
+    border-radius: 5px;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaçamento entre o ícone e o texto */
 }
 
-button:hover {
+/* Efeito de hover nos botões */
+.btn:hover {
     opacity: 0.9;
+    transform: translateY(-2px);
 }
 
-button:nth-child(1) { /* Botão de Editar */
-    background-color: #ffc107;
+/* Estilo específico para cada tipo de botão */
+.btn.editar {
+    background-color: #ffb300;
     color: #333;
 }
 
-button:nth-child(2) { /* Botão de Excluir */
+.btn.excluir {
     background-color: #f44336;
     color: #fff;
 }
 
-/* Mensagem de status */
-p {
-    text-align: center;
-    color: #4CAF50;
-    font-weight: bold;
-    margin-top: 15px;
+.btn.ativar {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.btn.visualizar {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .noticia-linha {
+        flex-direction: column; /* Alinha os itens na vertical em telas pequenas */
+        gap: 10px;
+    }
+
+    .noticia-campo {
+        margin-right: 0; /* Remove o espaçamento extra nos campos */
+    }
+
+    .noticia-botoes {
+        justify-content: center; /* Alinha os botões ao centro em telas pequenas */
+    }
+
+    .btn {
+        font-size: 0.8rem; /* Ajusta o tamanho dos botões */
+    }
 }

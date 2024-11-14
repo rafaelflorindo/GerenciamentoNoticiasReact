@@ -23,8 +23,4 @@ function QuemSomos() {
 
     );
 }
-
 export default QuemSomos;
-
-
-//<img src="tt.jpg"/>

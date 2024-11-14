@@ -1,27 +1,65 @@
+/* Importação da fonte Roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-.QuemSomos{
+
+/* Estilo global para o componente QuemSomos */
+.QuemSomos {
     margin: 0 auto;
     width: 95%;
-    font-family: "Roboto", sans-serif;
-}
-.QuemSomos img{
-    margin: 30px;
-}
-.QuemSomos h1{
-    font-weight: 900;
-    font-size: 2,8em;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    max-width: 1200px;  /* Garante que o conteúdo não ultrapasse um tamanho razoável */
+    padding: 20px;
 }
 
-.QuemSomos h2{
+/* Estilo para as imagens dentro da seção QuemSomos */
+.QuemSomos img {
+    margin: 20px;
+    max-width: 100%;  /* Imagens vão se ajustar à largura disponível */
+    height: auto;  /* Mantém a proporção das imagens */
+    border-radius: 8px;  /* Bordas arredondadas para um visual mais moderno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave para dar destaque */
+}
+
+/* Título principal - Quem Somos */
+.QuemSomos h1 {
+    font-weight: 900;
+    font-size: 2.5em;  /* Corrigido para um tamanho de fonte mais legível */
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;  /* Centraliza o título */
+}
+
+/* Subtítulo h2 - Missão, Visão, Valores */
+.QuemSomos h2 {
     font-weight: 700;
     font-size: 2.1em;
     color: #333;
+    margin-bottom: 15px;
 }
 
-.QuemSomos p{
-    font-size: 1,9em;
-    line-height: 30px;
-    text-align: justify;
+/* Parágrafos de texto */
+.QuemSomos p {
+    font-size: 1.2em;  /* Tamanho de texto ajustado para ser mais legível */
+    line-height: 1.8;  /* Melhor espaçamento entre as linhas */
+    text-align: justify;  /* Justifica o texto */
     color: #333;
+    margin-bottom: 20px;  /* Espaçamento inferior para separar os parágrafos */
+}
+
+/* Ajustes de responsividade */
+@media (max-width: 768px) {
+    .QuemSomos h1 {
+        font-size: 2em;  /* Tamanho menor em telas pequenas */
+    }
+
+    .QuemSomos h2 {
+        font-size: 1.8em;  /* Reduz o tamanho do subtítulo em telas menores */
+    }
+
+    .QuemSomos p {
+        font-size: 1.1em;  /* Ajusta o tamanho do parágrafo para melhor leitura */
+    }
+
+    .QuemSomos img {
+        margin: 10px;  /* Reduz a margem das imagens em telas pequenas */
+    }
 }
