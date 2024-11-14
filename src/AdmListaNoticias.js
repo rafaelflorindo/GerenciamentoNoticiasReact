@@ -27,7 +27,7 @@ const AdmListaNoticias = () => {
     const excluirNoticia = async (id) => {
         if (window.confirm('Tem certeza que deseja excluir esta notícia?')) {
             try {
-                const response = await fetch(`http://localhost:8080/noticias/${id}`, {
+                const response = await fetch(`http://localhost:8082/noticias/${id}`, {
                     method: 'DELETE',
                 });
                 if (!response.ok) {
